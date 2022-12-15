@@ -2,7 +2,7 @@
 //  ListRowView.swift
 //  TodoList
 //
-//  Created by Joff on 18/11/22.
+// Created by Joff on 11/12/22.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct ListRowView: View {
     
     var body: some View {
         HStack {
-            Image(systemName:item.isCompleted ? "checkmark.circle" : "circle")
+            Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
                 .foregroundColor(item.isCompleted ? .green : .red)
             Text(item.title)
             Spacer()
@@ -22,10 +22,11 @@ struct ListRowView: View {
         .padding(.vertical, 8)
     }
 }
+
 struct ListRowView_Previews: PreviewProvider {
     
-    static var item1 = ItemModel(title: "first item", isCompleted: false)
-    static var item2 = ItemModel(title: "second item", isCompleted: true)
+    static var item1 = ItemModel(title: "First item!", isCompleted: false)
+    static var item2 = ItemModel(title: "Second Item.", isCompleted: true)
     
     static var previews: some View {
         Group {
@@ -33,5 +34,6 @@ struct ListRowView_Previews: PreviewProvider {
             ListRowView(item: item2)
         }
         .previewLayout(.sizeThatFits)
+        
     }
 }
